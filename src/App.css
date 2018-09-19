@@ -1,28 +1,46 @@
-.App {
-  text-align: center;
+
+.container{
+    position: relative;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.back_template{
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.Salesforce-Ipad {
+  position: absolute;
+  top: 200px;
+  right:0;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+
 }
 
-.App-title {
-  font-size: 1.5em;
+
+@media(max-width: 768px){
+    .Salesforce-Ipad {
+        position: absolute;
+        top: 50px;
+        right:0;
+        width: 50%;
+        height: auto;
+        object-fit: contain;
+      
+      } 
+}
+@media(min-width:769px){
+    .Salesforce-Ipad {
+        position: absolute;
+        top: 150px;
+        right:0;
+        width: 50%;
+        height: auto;
+        object-fit: contain;
+      
+      } 
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+    

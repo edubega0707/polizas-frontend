@@ -1,18 +1,50 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import fondo from './back-template.svg'
+import imagen2 from './images/Salesforce-Ipad.svg'
+import { Toolbar } from './components/Toolbar/Toolbar';
+import { SideDrawer } from './components/SideDrawer/SideDrawer';
+import { Backdrop } from './components/BackDrop/BackDrop';
+
 
 class App extends Component {
+  state={
+    sideDrawerOpen:false
+  }
+
+  drawerToggleClickHandler=()=>{
+    this.setState((prevState)=>{
+     return{ sideDrawerOpen: !this.state.sideDrawerOpen} 
+    })
+  }
+  backdropClickHandler=()=>{
+    this.setState({sideDrawerOpen:false}) 
+  }
+
   render() {
+    let backdrop;
+    if(this.state.sideDrawerOpen){
+      backdrop=<Backdrop click={this.backdropClickHandler}/>
+    }
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div style={{height: '100vh'}}>
+
+          <div className="container">
+            <Toolbar drawerToggleClickHandler ={this.drawerToggleClickHandler}/>
+            <SideDrawer show={this.state.sideDrawerOpen}/>
+            {backdrop}  
+            <div >
+             <img src={fondo} alt="imagenfondo" className="back_template"/>
+             <img src={imagen2} alt="imagendos" className="Salesforce-Ipad"/>
+            </div>
+           
+            
+            
+          </div>
+
+          <main style={{marginTop: '64px'}}>
+            <p>sasdadadds</p>
+          </main>
       </div>
     );
   }
