@@ -6,8 +6,17 @@
     width: 100%;
     background:transparent;
     height: 56px;
-    
-}.toolbar__navigation{
+    z-index: 1; 
+    transition: 0.5s; 
+}
+
+.toolbar:hover{
+    color: #000000;
+    background: #ffff;
+    opacity: .8;
+}
+
+.toolbar__navigation{
  display: flex;
  height: 100%;
  align-items: center;
@@ -20,7 +29,7 @@
     margin-left: 1rem;
 }
 .toolbar__logo a{
-    color: #ffff;
+    color: rgb(5, 5, 5);
     text-decoration: none;
     font-size: 1.5em;
 }
@@ -33,7 +42,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
+    display: flex;  
 
 }
 
@@ -41,8 +50,7 @@
      padding: 0 1rem;
 }
 .toolbar_navigation-items a{
-    color: #ffff;
-    border-radius: 10%;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-size: 24px;
     transition: 0.5s;
@@ -51,7 +59,8 @@
 
 .toolbar_navigation-items a:hover,
 .toolbar_navigation-items a:active{
-    background:  #fa923f;
+    color: #ffff;
+    background:  #212121;
 }
 
 

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import fondo from './back-template.svg'
-import imagen2 from './images/Salesforce-Ipad.svg'
+import './components/Footer/Footer.css';
 import { Toolbar } from './components/Toolbar/Toolbar';
 import { SideDrawer } from './components/SideDrawer/SideDrawer';
 import { Backdrop } from './components/BackDrop/BackDrop';
+import Routes from './Routes';
+import { Footer } from './components/Footer/Footer';
 
 
 class App extends Component {
@@ -27,25 +28,19 @@ class App extends Component {
       backdrop=<Backdrop click={this.backdropClickHandler}/>
     }
     return (
-      <div style={{height: '100vh'}}>
+      <div style={{ height: 'auto' }}>
 
-          <div className="container">
-            <Toolbar drawerToggleClickHandler ={this.drawerToggleClickHandler}/>
-            <SideDrawer show={this.state.sideDrawerOpen}/>
-            {backdrop}  
-            <div >
-             <img src={fondo} alt="imagenfondo" className="back_template"/>
-             <img src={imagen2} alt="imagendos" className="Salesforce-Ipad"/>
-            </div>
-           
-            
-            
+          <div className="navbar">
+            <Toolbar drawerToggleClickHandler={this.drawerToggleClickHandler} />
+            <SideDrawer show={this.state.sideDrawerOpen} />
+            {backdrop}
           </div>
-
-          <main style={{marginTop: '64px'}}>
-            <p>sasdadadds</p>
+          <main >
+             <Routes/>
+             <Footer/>
           </main>
-      </div>
+    
+    </div>
     );
   }
 }
